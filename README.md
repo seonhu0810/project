@@ -14,37 +14,48 @@
 OO님
 
 
-### 필요한 파일
+### 기능
 
 #### 박선후
 
 
-config.py       // 설정파일
+config.py 
+- MySQL 연결을 위한 설정파일 
 
 
-connect.py      // MySQL DB 연결
+connect.py
+- MySQL DB 연결하는 기능
 
 
-fetchall.py     // 고객 데이터 읽어오기
-
-
-
-
-### 장민준
-
-
-insertData.py   // 고객 데이터 추가
-
-
-updateData.py   // 고객 데이터 업데이트
-
-
-deleteData.py   // 고객 데이터 삭제
+fetchall.py
+- DB에서 모든 데이터를 읽어오는 기능
 
 
 
 
-### 임현욱
+#### 장민준
+
+
+insertData.py
+- 데이터를 추가하는 기능
+- url에 다음과 같은 형식으로 입력
+    - '/insert/<title>/<isbn>' 
+
+
+updateData.py
+- 데이터를 업데이트하는 기능
+- url에 다음과 같은 형식으로 입력
+    - '/update/<int:id>/<title>'
+
+
+deleteData.py 
+- 데이터를 삭제하는 기능
+- url에 다음과 같은 형식으로 입력
+    - '/delete/<int:id>'
+
+
+
+#### 임현욱
 
 
 app.py
