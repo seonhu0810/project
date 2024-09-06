@@ -1,26 +1,22 @@
-from _mysql_connector import Error
-from connect import connect
+from mysql.connector import MySQLConnection, Error
+from config import read_config
 
-#이름 책이름 id
+def insert_book(title, isbn):
+    query = "INSERT INTO books(title,isbn) " \
+            "VALUES(%s,%s)"
 
-def insert_data(name, bookname, id):
-    query = "INSERT INTO users (name, bookname, id) VALUES (%s, %s, %s)" 
-    data = (name, bookname, id)
-
+    args = (title, isbn)
+    book_id = None
     try:
-        # connect 함수로 데이터베이스에 연결
-        conn = connect()  # 이때 config 파일을 이용한 연결이 이미 설정된 상태
-        cursor = conn.cursor()
-        
-        # 데이터 삽입
-        cursor.execute(query, data)
-        conn.commit()
-        
-        print(f"{cursor.rowcount}개의 행이 삽입되었습니다.")
+        config = read_config()
+        with MySQLConnection(**config) as conn:
+            with conn.cursor() as cursor:
+                cursor.execute(query, args)
+                book_id =  cursor.lastrowid
+            conn.commit()
+        return book_id
     except Error as error:
-        print("error")
-    
-    finally:
-        if conn.is_connected():
-            cursor.close()
-            conn.close()
+        print(error)
+
+if __name__ == '__main__':
+    insert_book('A Sudden Light', '9781439187036')
