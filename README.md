@@ -25,6 +25,9 @@ config.py       // 설정파일
 connect.py      // MySQL DB 연결
 
 
+fetchall.py     // 고객 데이터 읽어오기
+
+
 
 
 ### 장민준
@@ -36,18 +39,15 @@ insertData.py   // 고객 데이터 추가
 updateData.py   // 고객 데이터 업데이트
 
 
-
-
-### 임현욱
-fetchall.py     // 고객 데이터 읽어오기
-
-
 deleteData.py   // 고객 데이터 삭제
 
 
+
+
+### 임현욱
+
+
 app.py
-
-
 
 
 templates/list.html     //html 파일        
