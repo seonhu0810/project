@@ -1,5 +1,3 @@
-
-
 규칙
 commit
     이름초성_작업내용_순서
@@ -10,10 +8,13 @@ commit
     OO님
 
 
-기능
-CRUD
-Create
-Read
-Update
-Delete
+필요한 파일
+config.py       // 설정파일
+connect.py      // MySQL DB 연결
+fetchall.py     // 고객 데이터 읽어오기
+insertData.py   // 고객 데이터 추가
+updateData.py   // 고객 데이터 업데이트
+deleteData.py   // 고객 데이터 삭제
+app.py
+templates/list.html     //html 파일           
 
