@@ -1,9 +1,13 @@
 
 
 규칙
-commit: 이름 초성 + 작업내용 + 순서
-브랜치: push는 main
-호칭: OO님
+commit
+    이름초성_작업내용_순서
+브랜치
+    이름초성
+    push는 main
+호칭
+    OO님
 
 
 기능
